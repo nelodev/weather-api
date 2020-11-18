@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-console.log('procces.env', process.env);
-
 function App() {
   const [weatherInfo, setWeatherInfo] = useState(null);
   const [input, setInput] = useState("Barcelona");
@@ -13,7 +11,7 @@ function App() {
 
   const getWeatherInfo = async (query) => {
     const location = await axios.get(
-      `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API}&q=${query}`
+      `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API}&q=${query}`
     );
     setWeatherInfo(location.data);
   };

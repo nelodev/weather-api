@@ -9,7 +9,7 @@ function App() {
   const [input, setInput] = useState("Barcelona");
   useEffect(() => {
     getWeatherInfo(input);
-  }, []);
+  }, [input]);
 
   const getWeatherInfo = async (query) => {
     const location = await axios.get(
